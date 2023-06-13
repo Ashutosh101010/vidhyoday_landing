@@ -1,0 +1,38 @@
+@media (max-width: 959px) { /* Adjust this breakpoint as needed */
+    .MuiGrid-item {
+      flex-basis: 50% !important;
+      max-width: 50% !important;
+    }
+  }
+  
+  @media (max-width: 600px) { /* Adjust this breakpoint as needed */
+    .MuiGrid-item {
+      flex-basis: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  .slick-prev:before {
+    content: none;
+  }
+  
+  .arrow-icon {
+    display: block;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    background-image: url('./arrow/leftArreow.png'); /* Replace with your left arrow image */
+    background-size: cover;
+  }
+
+.slick-next:before {
+    content: none;
+  }
+  
+  .arrow-icon {
+    display: block;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    background-image: url('./arrow/rightArrow.png'); /* Replace with your left arrow image */
+    background-size: cover;
+  }
+  

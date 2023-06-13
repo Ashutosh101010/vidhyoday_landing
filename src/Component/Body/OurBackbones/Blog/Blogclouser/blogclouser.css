@@ -1,0 +1,24 @@
+.slick-prev:before {
+    content: none;
+  }
+  
+  .arrow-icon {
+    display: block;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    background-image: url('../../../../../assets/img/arrow/leftArreow.png'); /* Replace with your left arrow image */
+    background-size: cover;
+  }
+
+.slick-next:before {
+    content: none;
+  }
+  
+  .arrow-icon {
+    display: block;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    background-image: url('../../../../../assets/img/arrow/rightArrow.png'); /* Replace with your left arrow image */
+    background-size: cover;
+  }
+  
