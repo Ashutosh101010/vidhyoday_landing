@@ -7,6 +7,8 @@ import About from './About/About';
 import MobileSection from './MobileSection/MobileSection';
 import CardSection from './OurCourses/CardSection';
 import ImageSection from './ImageSection/ImageSection';
+import WhatsAppIcon from './whatsappIcon/WhatsAppIcon';
+
 
 const Body = ({ headerCourse }) => {
     // const [showComponnet, setComponnet ] =([])
@@ -36,7 +38,7 @@ const Body = ({ headerCourse }) => {
     return (
         <div
             style={{
-                display: 'flex', flexDirection: 'column', gap: '3rem'
+                display: 'flex', flexDirection: 'column', gap: '3rem'   
             }}>
             <Box
                 sx={{
@@ -52,11 +54,19 @@ const Body = ({ headerCourse }) => {
             </Box>
             <OurBackbones aboutSection={aboutSection} />
             <Slider />
-            {/* <Newslider/> */}
             <ImageSection />
             <About />
+            {/* <NewsTrigger
+              style={{
+                '@media (max-width: 880px)': {
+                  display: 'none',
+                },
+              }}
+            /> */}
             <CardSection courseSection={courseSection} />
             <MobileSection />
+            {/* <PlayArrowicon /> */}
+            <WhatsAppIcon />
         </div>
     )
 }

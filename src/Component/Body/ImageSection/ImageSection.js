@@ -49,11 +49,11 @@ function ImageSection() {
                             <Box sx={{ width: '100%', display: 'flex', gap: '4rem' }}>
                                 <Box position="relative">
                                     <Box display="flex" position="absolute">
-                                        {isMobileView && (
+                                        {/* {isMobileView && (
                                             <Box position="relative" top="50px">
                                                 <img src={section2} style={{ width: '100%' }} alt="Section 2" />
                                             </Box>
-                                        )}
+                                        )} */}
                                         <Box position="relative">
                                             <Box display="flex" position="absolute">
                                                 {/* {isMobileView && ( */}
@@ -65,7 +65,7 @@ function ImageSection() {
                                                     <img src={section1} style={{ width: '100%' }} alt="Section 1" />
                                                 </Box>
                                             </Box>
-                                            {!isMobileView && (
+                                            {/* {!isMobileView && ( */}
                                                 <Box display="flex">
                                                     <Box position="relative" top="211px" left="36px" zIndex="4">
                                                         <img src={section3} style={{ width: '100%' }} alt="Section 3" />
@@ -74,10 +74,10 @@ function ImageSection() {
                                                         <img src={section4} style={{ width: '100%' }} alt="Section 4" />
                                                     </Box>
                                                 </Box>
-                                            )}
+                                            {/* )} */}
                                         </Box>
                                     </Box>
-                                    {!isMobileView && (
+                                    {/* {!isMobileView && ( */}
                                         <Box display="flex">
                                             <Box position="relative" top="211px" left="36px" zIndex="4">
                                                 <img src={section3} style={{ width: '100%' }} alt="Section 3" />
@@ -86,7 +86,7 @@ function ImageSection() {
                                                 <img src={section4} style={{ width: '100%' }} alt="Section 4" />
                                             </Box>
                                         </Box>
-                                    )}
+                                    {/* )} */}
                                 </Box>
                             </Box>
                         </Grid>

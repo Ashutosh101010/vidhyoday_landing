@@ -8,14 +8,13 @@ import Body from '../Body/Body';
 // import Form from '../Form/Form';
 
 
-const Menubar = () => {
+const Menubar = ({ headerCourse }) => {
     return (
         <div>
             {/* <BrowserRouter> */}
                 <Routes>
                     {/* <div> */}
-                        <Route path="/" element={<Body />} />
-
+                        <Route path="/Home" element={<Body headerCourse={headerCourse}/>} />
                 </Routes>
             {/* </BrowserRouter > */}
         </div >

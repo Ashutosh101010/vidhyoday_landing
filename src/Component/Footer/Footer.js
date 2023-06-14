@@ -100,6 +100,7 @@ function Footer() {
                 fontSize: '18px',
                 lineHeight: '21px',
                 paddingBottom: '0.5rem',
+                padding:'1rem'
             }}>
                 Copyright @Vidhyoday Education Private Limited
             </Typography>

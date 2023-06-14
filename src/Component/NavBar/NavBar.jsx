@@ -1,5 +1,5 @@
-import  { useState } from 'react';
-import {  NavLink,  useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,12 +9,14 @@ import AboutIcon from '@mui/icons-material/Info';
 import HomeIcon from "@mui/icons-material/Home";
 import logoImg from "../../assets/img/logo/logo.png";
 import { Container } from "@mui/system";
-// import { makeStyles } from '@mui/styles';
+import NewsTrigger from './NewsTrigger/NewsTrigger';
+import { makeStyles } from '@mui/styles';
+import './newstriger.css';
 // import ModalForm from '../Form/ModalForm';
 import {
   Drawer,
   List,
-  ListItem, 
+  ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
@@ -23,23 +25,7 @@ import {
 
 
 // const useStyles = makeStyles({
-//   button: {
-//     textTransform: 'none',
-//     fontFamily: 'Inter',
-//     fontStyle: 'normal',
-//     fontWeight: '600',
-//     fontSize: '15px',
-//     lineHeight: '13px',
-//     color: '#000000',
-//     background: '#F8BB1A',
-//     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-//     borderRadius: '10px',
-//     border: '1px solid #FFF',
-//     padding: '12px',
-//     marginLeft: '3rem',
-//     paddingLeft: '20px',
-//     paddingRight: '20px',
-//   },
+
 //   mobileView: {
 //     '@media (max-width: 600px)': {
 //       display: 'none',
@@ -53,6 +39,7 @@ import {
 // });
 
 const Navbar = ({ sticky, scrollDownC }) => {
+  const isDesktopScreen = window.innerWidth >= 880;
   const navigate = useNavigate();
   // const classes = useStyles();
   const headerClasses = `header ${sticky ? 'sticky' : ''}`;
@@ -71,12 +58,16 @@ const Navbar = ({ sticky, scrollDownC }) => {
   };
 
   const handleOpenForm = () => {
-    navigate('/form');
+    navigate('web.classiolabs.com');
     // console.log('from')
   };
-  
+
   const handleLogoClick = () => {
     navigate("/"); // Replace "/" with the desired route for the home page
+  };
+
+  const handleLoginClick = () => {
+    navigate('https://web.classiolabs.com');
   };
 
   const list = (anchor) => (
@@ -92,7 +83,7 @@ const Navbar = ({ sticky, scrollDownC }) => {
     >
       <List>
         {[
-          
+
           { text: "Home", icon: <HomeIcon />, link: "/" },
           { text: "Blog", icon: <FeaturedPlayListIcon />, link: "/" },
           { text: "Courses", icon: <FeaturedPlayListIcon />, link: "/" },
@@ -120,29 +111,87 @@ const Navbar = ({ sticky, scrollDownC }) => {
           </ListItem>
         ))}
       </List>
+      <Box
+        sx={{
+          marginLeft: '4rem',
+          '@media (max-width: 600px)': {
+            marginLeft: '0',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.9rem',
+          },
+          '@media (min-width: 601px) and (max-width: 960px)': {
+            marginLeft: '0',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.9rem',
+          },
+        }}
+      >
         <Button
-        onClick={handleOpenForm}
-          style={{
+          onClick={() => (window.location.href = 'https://web.classiolabs.com')}
+          sx={{
             textTransform: 'none',
-            fontFamily: 'Inter',
+            fontFamily: 'Mulish',
             fontStyle: 'normal',
-            fontWeight: '600',
-            fontSize: '15px',
+            fontWeight: '400',
+            fontSize: '19px',
             lineHeight: '13px',
-            color: '#000000',
-            background: '#F8BB1A',
+            color: '#FFFFFF',
+            background: '#01B1C9',
             boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-            borderRadius: '10px',
+            borderRadius: '6px',
             border: '1px solid #FFF',
             padding: '12px',
             marginLeft: '3rem',
             paddingLeft: '20px',
             paddingRight: '20px',
+            '@media (max-width: 600px)': {
+              marginLeft: '0',
+              width: '80%',
+            },
+            '@media (min-width: 601px) and (max-width: 960px)': {
+              marginLeft: '0',
+              width: '80%',
+            },
           }}
         >
-          Let’s Talk
+          Login
         </Button>
 
+        <Button
+          sx={{
+            textTransform: 'none',
+            fontFamily: 'Mulish',
+            fontStyle: 'normal',
+            fontWeight: '400',
+            fontSize: '19px',
+            lineHeight: '13px',
+            color: '#5A5A5A',
+            background: '#fff',
+            borderRadius: '6px',
+            border: '1px solid #01B1C9',
+            padding: '12px',
+            marginLeft: '2rem',
+            paddingLeft: '20px',
+            paddingRight: '20px',
+            '@media (max-width: 600px)': {
+              marginLeft: '0',
+              width: '80%',
+            },
+            '@media (min-width: 601px) and (max-width: 960px)': {
+              marginLeft: '0',
+              width: '80%',
+            },
+          }}
+        >
+          Register
+        </Button>
+      </Box>
     </Box>
   );
 
@@ -152,15 +201,15 @@ const Navbar = ({ sticky, scrollDownC }) => {
     textDecoration: 'none',
     fontSize: "19px",
     fontWeight: "400",
-     fontFamily: 'Mulish',
+    fontFamily: 'Mulish',
     cursor: "pointer",
     letterSpacing: '3px',
     lineHeight: '22px',
     textAlign: 'center',
-    color:'#5A5A5A',
+    color: '#5A5A5A',
     // color: location.pathname === '/' ? '#FFFFFF' : 'rgba(139, 69, 246, 1)',
     "&:hover": {
-      color:'#01B1C9',
+      color: '#01B1C9',
       // color: location.pathname === '/' ? 'rgba(248, 187, 26, 1)' : 'rgba(248, 187, 26, 1)',
     },
     '&.active': {
@@ -238,7 +287,7 @@ const Navbar = ({ sticky, scrollDownC }) => {
               >
                 {list("left")}
               </Drawer>
-              <NavbarLogo  onClick={handleLogoClick} src={logoImg} alt="logo" sx={{ width: '50%', marginLeft: '4rem' }} />
+              <NavbarLogo onClick={handleLogoClick} src={logoImg} alt="logo" sx={{ width: '50%', marginLeft: '4rem' }} />
             </Box>
 
             <NavbarLinksBox>
@@ -250,7 +299,7 @@ const Navbar = ({ sticky, scrollDownC }) => {
               >
                 Home
               </StyledNavLink>
-             
+
               {/* <StyledNavLink
                 to="/careeratclassio"
                 exact
@@ -269,7 +318,7 @@ const Navbar = ({ sticky, scrollDownC }) => {
               <StyledNavLink
                 // to="/careeratclassio"
                 exact
-                // activeClassName="active"
+              // activeClassName="active"
               >
                 Career
               </StyledNavLink>
@@ -282,60 +331,79 @@ const Navbar = ({ sticky, scrollDownC }) => {
               </StyledNavLink> */}
             </NavbarLinksBox>
             {/* <ModalForm className={`${classes.button} ${classes.mobileView}`}/> */}
-           <Box sx={{marginLeft:'4rem'}}>
-           <Button 
-            // className={`${classes.button} ${classes.mobileView}`}
-            //  onClick={handleOpenForm}
+            <Box
               sx={{
-                textTransform: 'none',
-                 fontFamily: 'Mulish',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                fontSize: '19px',
-                lineHeight: '13px',
-                color: '#FFFFFF',
-                background: '#01B1C9',
-                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                borderRadius: '6px',
-                border: '1px solid #FFF',
-                padding: '12px',
-                marginLeft: '3rem',
-                paddingLeft: '20px',
-                paddingRight: '20px',
-                '@media (max-width: 600px)': {
+                // '@media (min-width: 601px)': {
+                //   display: 'none',
+                // },
+              }}
+            >
+              <Button
+                // className={`${classes.button} ${classes.mobileView}`}
+                onClick={() => (window.location.href = 'https://web.classiolabs.com')}
+                sx={{
+                  textTransform: 'none',
+                  fontFamily: 'Mulish',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  fontSize: '19px',
+                  lineHeight: '13px',
+                  color: '#FFFFFF',
+                  background: '#01B1C9',
+                  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                  borderRadius: '6px',
+                  border: '1px solid #FFF',
+                  padding: '12px',
+                  marginLeft: '3rem',
+                  paddingLeft: '20px',
+                  paddingRight: '20px',
+                  '@media (max-width: 880px)': {
+                    display: 'none',
+                  },
+                }}
+              >
+                Login
+              </Button>
+
+              <Button
+                // className={`${classes.button} ${classes.mobileView}`}
+                // onClick={handleOpenForm}
+                sx={{
+                  textTransform: 'none',
+                  fontFamily: 'Mulish',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  fontSize: '19px',
+                  lineHeight: '13px',
+                  color: '#5A5A5A',
+                  background: '#fff',
+                  // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                  borderRadius: '6px',
+                  border: '1px solid #01B1C9',
+                  padding: '12px',
+                  marginLeft: '2rem',
+                  paddingLeft: '20px',
+                  paddingRight: '20px',
+                  '@media (max-width:880px)': {
+                    display: 'none',
+                  },
+                }}
+              >
+                Register
+              </Button>
+              <div className={`desktop-news-trigger ${isDesktopScreen ? 'hide-on-desktop' : ''}`}>
+                <NewsTrigger className='news-trigger' />
+              </div>
+
+            </Box>
+
+            {/* <NewsTrigger
+              style={{
+                '@media (min-width: 601px)': {
                   display: 'none',
                 },
               }}
-            >
-              Login
-            </Button>
-            <Button 
-            // className={`${classes.button} ${classes.mobileView}`}
-            //  onClick={handleOpenForm}
-              sx={{
-                textTransform: 'none',
-                 fontFamily: 'Mulish',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                fontSize: '19px',
-                lineHeight: '13px',
-                color: '#5A5A5A',
-                background: '#fff',
-                // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                borderRadius: '6px',
-                border: '1px solid #01B1C9',
-                padding: '12px',
-                marginLeft: '2rem',
-                paddingLeft: '20px',
-                paddingRight: '20px',
-                '@media (max-width: 600px)': {
-                  display: 'none',
-                },
-              }}
-            >
-             Register
-            </Button>
-           </Box>
+            /> */}
             {/* <img onClick={handleLogoClick} className={`${classes.desktopView}`}
               src={logoImg}
               alt="Image"
@@ -344,8 +412,8 @@ const Navbar = ({ sticky, scrollDownC }) => {
 
 
           </Box>
-        </NavbarContainer>
-      </Box>
+        </NavbarContainer >
+      </Box >
     </>
   );
 }

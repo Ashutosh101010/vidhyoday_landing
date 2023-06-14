@@ -1,0 +1,19 @@
+.whatsapp-container {
+    position: fixed;
+    bottom: 1rem;
+    left: 1.5rem;
+    z-index: 9999;
+  }
+  
+  .whatsapp-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  @media (max-width: 600px) {
+    .whatsapp-container {
+        bottom: 1rem;
+        left: 1.5rem;
+    }
+  }
+  

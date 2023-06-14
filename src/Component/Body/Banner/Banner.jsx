@@ -1,4 +1,4 @@
-import React, {useRef } from 'react';
+import React, { useRef } from 'react';
 
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -12,7 +12,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 
 
-const Banner = ({ScrollDown, CoursescrollDown}) => {
+const Banner = ({ ScrollDown, CoursescrollDown }) => {
     // const OurBackbones = useRef(null);
     const isMobileScreen = useMediaQuery('(max-width: 600px)');
 
@@ -38,7 +38,7 @@ const Banner = ({ScrollDown, CoursescrollDown}) => {
             fontSize: "40px",
         },
     }));
-  
+
     return (
         <Box sx={{
             // background: 'linear-gradient(89deg, #8B45F6 0%, #8946F5 49.39%, #D07D71 98.71%)',
@@ -86,12 +86,12 @@ const Banner = ({ScrollDown, CoursescrollDown}) => {
                             <Button
                                 sx={{
                                     textTransform: 'none',
-                                     fontFamily: 'Mulish',
+                                    fontFamily: 'Mulish',
                                     fontStyle: 'normal',
                                     fontWeight: '400',
-                                    fontSize: { xs: '23px', md: '23px' },
+                                    fontSize: { xs: '23px', md: '23px', sm: '18px' },
                                     textAlign: 'center',
-                                    lineHeight: { xs: '27px', md: '27px' },
+                                    lineHeight: { xs: '27px', md: '27px', sm: '18px' },
                                     color: '#000000',
                                     background: '#FFFFFF',
                                     boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.25)',
@@ -99,13 +99,16 @@ const Banner = ({ScrollDown, CoursescrollDown}) => {
                                     border: '2px solid #F2B632;',
                                     padding: '12px',
                                     marginBottom: '1rem',
-                                    width: { xs: '40%', md: '60%' },
+                                    width: '40%', // Default width for large screens
                                     height: '63px',
-                                    // ':hover': {
-                                    //     background: 'rgb(81 47 133 / 71%)',
-                                    // },
-                                    '@media (max-width: 768px)': {
-                                        width: '60%',
+                                    '@media (max-width: 600px)': {
+                                        width: '72%', // Adjusted width for small screens (width <= 600px)
+                                        fontSize: '18px',
+                                        marginLeft: 0,
+                                    },
+                                    '@media (min-width: 601px) and (max-width: 900px)': {
+                                        width: '47%', // Adjusted width for medium screens (600px < width <= 900px)
+                                        fontSize: '33px',
                                         marginLeft: 0,
                                     },
                                 }}
@@ -146,7 +149,7 @@ const Banner = ({ScrollDown, CoursescrollDown}) => {
                                 <Button
                                     sx={{
                                         textTransform: 'none',
-                                         fontFamily: 'Mulish',
+                                        fontFamily: 'Mulish',
                                         fontStyle: 'normal',
                                         fontWeight: '400',
                                         fontSize: { xs: '19.6429px', md: '19.6429px' },
@@ -174,70 +177,70 @@ const Banner = ({ScrollDown, CoursescrollDown}) => {
                             </Box>
                         </Box>
                     </Box>
-                    
+
                     {isMobileScreen ? null : (
-                    <Box sx={{ flex: "1", padding: '1rem' }}>
-                        <Box
-                         sx={{
-                            width: '45%',
-                            border: '1px solid #3C70AC',
-                            borderRadius: '7.07143px',
-                            float: 'right',
-                            /* margin-top: 3rem; */
-                            position: 'relative',
-                            top: '6rem',
-                            left: '1rem',
-                        }}>
-                         <Button onClick={ScrollDown}
+                        <Box sx={{ flex: "1", padding: '1rem' }}>
+                            <Box
                                 sx={{
-                                    textTransform: 'none',
-                                     fontFamily: 'Mulish',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: { xs: '25px', md: '22px' },
-                                    textAlign: 'center',
-                                    lineHeight: { xs: '29px', md: '23px' },
-                                    color: '#000000',
-                                    background: '#FFFFFF',
-                                    boxShadow: '0px 3.14286px 3.14286px rgba(0, 0, 0, 0.25)',
-                                    borderRadius: '7px',
-                                    border: '2px solid #FFFFFF;',
-                                    padding: '12px',
-                                    marginTop: '2px',
-                                    marginLeft: '2px',
-                                    // marginBottom: '1rem',
-                                    width: { xs: '100%', md: '100%' },
-                                    height: '63px',
-                                    // ':hover': {
-                                    //     background: 'rgb(81 47 133 / 71%)',
-                                    // },
-                                    '@media (max-width: 768px)': {
-                                        width: '100%',
-                                        marginLeft: 0,
+                                    width: '45%',
+                                    border: '1px solid #3C70AC',
+                                    borderRadius: '7.07143px',
+                                    float: 'right',
+                                    /* margin-top: 3rem; */
+                                    position: 'relative',
+                                    top: '6rem',
+                                    left: '1rem',
+                                }}>
+                                <Button onClick={ScrollDown}
+                                    sx={{
+                                        textTransform: 'none',
+                                        fontFamily: 'Mulish',
+                                        fontStyle: 'normal',
+                                        fontWeight: '400',
+                                        fontSize: { xs: '25px', md: '22px' },
+                                        textAlign: 'center',
+                                        lineHeight: { xs: '29px', md: '23px' },
+                                        color: '#000000',
+                                        background: '#FFFFFF',
+                                        boxShadow: '0px 3.14286px 3.14286px rgba(0, 0, 0, 0.25)',
+                                        borderRadius: '7px',
+                                        border: '2px solid #FFFFFF;',
+                                        padding: '12px',
+                                        marginTop: '2px',
+                                        marginLeft: '2px',
+                                        // marginBottom: '1rem',
+                                        width: { xs: '100%', md: '100%' },
+                                        height: '63px',
+                                        // ':hover': {
+                                        //     background: 'rgb(81 47 133 / 71%)',
+                                        // },
+                                        '@media (max-width: 768px)': {
+                                            width: '100%',
+                                            marginLeft: 0,
+                                        },
+                                    }}
+                                >
+                                    Top Teachers
+                                </Button>
+                            </Box>
+                            <img
+                                src={Woman1}
+                                alt="Woman1Img"
+                                style={{
+                                    maxWidth: "100%",
+                                    marginBottom: "2rem",
+                                    width: '100%',
+                                    marginTop: '0rem', // Default marginTop for mobile screens
+
+                                    '@media (min-width: 768px)': { // Tablet screens
+                                        marginTop: '-4rem',
+                                    },
+                                    '@media (min-width: 1024px)': { // Desktop screens
+                                        marginTop: '-6rem',
                                     },
                                 }}
-                            >
-                                Top Teachers
-                            </Button>
+                            />
                         </Box>
-                        <img
-                            src={Woman1}
-                            alt="Woman1Img"
-                            style={{
-                                maxWidth: "100%",
-                                marginBottom: "2rem",
-                                width: '100%',
-                                marginTop: '0rem', // Default marginTop for mobile screens
-
-                                '@media (min-width: 768px)': { // Tablet screens
-                                    marginTop: '-4rem',
-                                },
-                                '@media (min-width: 1024px)': { // Desktop screens
-                                    marginTop: '-6rem',
-                                },
-                            }}
-                        />
-                    </Box>
                     )}
                 </CustomBox>
             </Container>

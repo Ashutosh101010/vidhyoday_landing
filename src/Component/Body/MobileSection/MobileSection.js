@@ -56,10 +56,7 @@ function MobileSection() {
                             // backgroundPosition: 'center',
                         }}
                     >
-                        <Grid item xs={12} md={6}
-                            sx={{
-                                background: 'radial-gradient(125.59% 52.59% at 91% 65%, rgba(241, 255, 157, 0.624) 0%, rgba(254, 157, 250, 0) 83.33%)'
-                            }}>
+                        <Grid item xs={12} md={6}>
                             <img
                                 style={{
                                     width: '100%',

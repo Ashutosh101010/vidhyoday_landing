@@ -5,7 +5,7 @@ import { Container } from "@mui/system";
 import Aboutimg from '../../../assets/img/About/image 1.png';
 import { Grid, Typography } from '@mui/material';
 import Vector from '../../../assets/img/About/Vector (1).png';
-import VideoPlay from '../VideoPlay/VideoPlay';
+import VideoPlay from './VideoPlay/VideoPlay';
 const About = () => {
     const CustomContainer = styled(Container)(({ theme }) => ({
         // display: "flex",
