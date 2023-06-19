@@ -3,29 +3,28 @@ import ReactPlayer from 'react-player';
 import screenfull from 'screenfull';
 import video from './video/videoplayback.mp4';
 import './css/videoPlay.css';
-// import ControlIcons from './ControlIcons/';
-// import ControlIcons from './ControlIcons';
-
 
 const VideoPlay = () => {
   return (
     <div className="videoPlayContainer">
-      <div className='playerDiv'>
+      <div className="videoWrapper">
         <ReactPlayer
-          width='100%'
-          height='100%'
+          className="videoPlayer"
           url={video}
           playing={true}
           muted={true}
           loop={true}
           controls={false}
+          width="100%"
+          height="100%"
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default VideoPlay
+export default VideoPlay;
+
 
 
 {/* <iframe

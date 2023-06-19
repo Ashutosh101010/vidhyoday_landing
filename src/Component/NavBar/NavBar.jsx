@@ -10,7 +10,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import logoImg from "../../assets/img/logo/logo.png";
 import { Container } from "@mui/system";
 import NewsTrigger from './NewsTrigger/NewsTrigger';
-import { makeStyles } from '@mui/styles';
+// import { makeStyles } from '@mui/styles';
 import './newstriger.css';
 // import ModalForm from '../Form/ModalForm';
 import {
@@ -391,7 +391,7 @@ const Navbar = ({ sticky, scrollDownC }) => {
               >
                 Register
               </Button>
-              <div className={`desktop-news-trigger ${isDesktopScreen ? 'hide-on-desktop' : ''}`}>
+              <div className={`desktop-news-trigger ${isDesktopScreen ? 'hide-on-desktop' : ''}`} style={{ overflowX: 'auto' }}>
                 <NewsTrigger className='news-trigger' />
               </div>
 

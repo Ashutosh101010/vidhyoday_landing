@@ -8,6 +8,15 @@ const PlayArrowIcon = ({ handleClick, showVideo }) => {
     handleClick();
   };
 
+  const handleImageClick = () => {
+    handleIconClick();
+    if (showVideo) {
+      document.body.classList.remove('stop-scrolling');
+    } else {
+      document.body.classList.add('stop-scrolling');
+    }
+  };
+
   return (
     <div className="Play-container">
       {showVideo ? (

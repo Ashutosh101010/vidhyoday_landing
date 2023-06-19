@@ -12,7 +12,7 @@ import BlogBanner from './img/img/blogbanner.png';
 const useStyles = makeStyles({
     
     customTypography: {
-         fontFamily: 'Mulish',
+        fontFamily: 'Mulish',
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: '1.2rem',

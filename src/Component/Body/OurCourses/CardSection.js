@@ -13,13 +13,13 @@ import RightArrow from './arrow/rightArrow.png';
 import { useMediaQuery } from '@material-ui/core';
 
 
-function CardSection({courseSection}) {
+function CardSection({ courseSection }) {
     const [courseData, setCourseData] = useState([]);
     const sliderRef = useRef(null);
     const instId = 1;
     const isMobileScreen = useMediaQuery('(max-width: 960px)');
 
-   
+
 
     useEffect(() => {
         async function fetchPublicBanner() {
@@ -54,32 +54,32 @@ function CardSection({courseSection}) {
         slidesToScroll: 4,
         initialSlide: 0,
         responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              initialSlide: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
         ]
-      };
+    };
     useEffect(() => {
         const handleResize = () => {
             if (sliderRef.current) {
@@ -128,41 +128,41 @@ function CardSection({courseSection}) {
 
     return (
         <CustomContainer ref={courseSection}>
-         {!isMobileScreen && (
-            <CustomBox>
-                <Box
-                    sx={{
-                        width: '100%',
-                        display: 'flex', flexDirection: 'column', gap: '3rem'
-                    }}>
-                    <Typography 
-                    sx={{
-                         fontFamily: 'Mulish',
-                        fontSize: '45px',
-                        fontWeight: '600',
-                        lineHeight: '53px',
-                        letterSpacing: '0em',
-                        textAlign: 'center',
-                        color: '#20BBD0',
+            {!isMobileScreen && (
+                <CustomBox>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            display: 'flex', flexDirection: 'column', gap: '3rem'
+                        }}>
+                        <Typography
+                            sx={{
+                                fontFamily: 'Mulish',
+                                fontSize: '45px',
+                                fontWeight: '600',
+                                lineHeight: '53px',
+                                letterSpacing: '0em',
+                                textAlign: 'center',
+                                color: '#20BBD0',
 
-                    }}>
-                        Our Courses
-                    </Typography>
+                            }}>
+                            Our Courses
+                        </Typography>
 
-                    <Typography 
-                    sx={{
-                         fontFamily: 'Mulish',
-                        fontWeight: '400',
-                        fontSize:'1.5rem',
-                        size: '20px',
-                        lineHeight: "23px",
-                        textAlign:'center',
-                        alignItems: 'center',
-                    }}>
-                        "Experience the Magnetic Charm of Our Courses and Ignite Your Journey to a Bright Future!"
-                    </Typography>
-                </Box>
-                {/* <Box sx={{
+                        <Typography
+                            sx={{
+                                fontFamily: 'Mulish',
+                                fontWeight: '400',
+                                fontSize: '1.5rem',
+                                size: '20px',
+                                lineHeight: "23px",
+                                textAlign: 'center',
+                                alignItems: 'center',
+                            }}>
+                            "Experience the Magnetic Charm of Our Courses and Ignite Your Journey to a Bright Future!"
+                        </Typography>
+                    </Box>
+                    {/* <Box sx={{
                     width: '100%',
                     height: '33px',
                     display: "flex",
@@ -172,154 +172,189 @@ function CardSection({courseSection}) {
                 }}>
                    
                 </Box> */}
-                <Box
-                 sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
-                    <Grid container spacing={4} 
-                    sx={{ width: '100%', marginTop: '3rem', 
-                     justifyContent: 'center', alignItems: 'center',  display: 'flex', flexDirection: 'row', gap: '2rem'
-                     }}>
-                        {courseData.map((data, index) => (
-                            <Box key={index} sx={{ width: '100%', maxWidth: '255px', marginBottom: '8px' }}>
-                                <Card sx={{ borderRadius: '20px' }}>
-                                    <CardMedia
-                                        sx={{
-                                            height: 140,
-                                            width: '100%',
-                                            borderRadius: '12px',
-                                            backgroundColor: 'aqua',
-                                        }}
-                                        image={`https://media.theoogway.com/${data.logo}`}
-                                        title="green iguana"
-                                    />
-                                    <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                        <Typography
-                                            gutterBottom
-                                            variant="h5"
-                                            component="div"
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                        <Grid container spacing={4}
+                            sx={{
+                                width: '100%', marginTop: '3rem',
+                                justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'row', gap: '2rem'
+                            }}>
+                            {courseData.map((data, index) => (
+                                <Box key={index} sx={{ width: '100%', maxWidth: '255px', marginBottom: '8px' }}>
+                                    <Card sx={{ borderRadius: '20px' }}>
+                                        <CardMedia
                                             sx={{
-                                                fontSize: '19.5px',
-                                                lineHeight: '23.6px',
-                                                fontFamily: 'Inter',
-                                                textAlign: 'center',
+                                                height: 140,
+                                                width: '100%',
+                                                borderRadius: '12px',
+                                                backgroundColor: 'aqua',
                                             }}
-                                        >
-                                            {data.title}
-                                        </Typography>
-                                        <Button
-                                            sx={{
-                                                color: '#8C8C8C',
-                                                border: '1px solid',
-                                                fontSize: '10.5px',
-                                                lineHeight: '10.6px',
-                                                display: 'flex',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                marginTop: '10px',
-                                            }}
-                                        >
-                                            Learn more
-                                        </Button>
-                                    </CardContent>
-                                </Card>
-                            </Box>
-                        ))}
-                    </Grid>
-                </Box>
-            </CustomBox>
+                                            image={`https://media.theoogway.com/${data.logo}`}
+                                            title="green iguana"
+                                        />
+                                        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                            <Typography
+                                                gutterBottom
+                                                variant="h5"
+                                                component="div"
+                                                sx={{
+                                                    fontSize: '19.5px',
+                                                    lineHeight: '23.6px',
+                                                    fontFamily: 'Inter',
+                                                    textAlign: 'center',
+                                                }}
+                                            >
+                                                {data.title}
+                                            </Typography>
+                                            <Button
+                                                sx={{
+                                                    color: '#8C8C8C',
+                                                    border: '1px solid',
+                                                    fontSize: '10.5px',
+                                                    lineHeight: '10.6px',
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    marginTop: '10px',
+                                                }}
+                                            >
+                                                Learn more
+                                            </Button>
+                                        </CardContent>
+                                    </Card>
+                                </Box>
+                            ))}
+                        </Grid>
+                    </Box>
+                </CustomBox>
             )}
 
             {isMobileScreen && (
-            <CustomBox>
-            <div
-            style={{
-                position: 'relative',
-                width: '100%',
-                background: 'transparent',
-                border: '1px solid transparent',
-            }}
-        >
-            <Slider ref={sliderRef} {...settings}>
-            {courseData.map((data, index) => (
-                            <Box key={index} sx={{ width: '100%', maxWidth: '255px', marginBottom: '8px' }}>
-                                <Card sx={{ borderRadius: '20px' }}>
-                                    <CardMedia
-                                        sx={{
-                                            height: 140,
-                                            width: '100%',
-                                            borderRadius: '12px',
-                                            backgroundColor: 'aqua',
-                                        }}
-                                        image={`https://media.theoogway.com/${data.logo}`}
-                                        title="green iguana"
-                                    />
-                                    <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                        <Typography
-                                            gutterBottom
-                                            variant="h5"
-                                            component="div"
-                                            sx={{
-                                                fontSize: '19.5px',
-                                                lineHeight: '23.6px',
-                                                fontFamily: 'Inter',
-                                                textAlign: 'center',
-                                            }}
-                                        >
-                                            {data.title}
-                                        </Typography>
-                                        <Button
-                                            sx={{
-                                                color: '#8C8C8C',
-                                                border: '1px solid',
-                                                fontSize: '10.5px',
-                                                lineHeight: '10.6px',
-                                                display: 'flex',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                marginTop: '10px',
-                                            }}
-                                        >
-                                            Learn more
-                                        </Button>
-                                    </CardContent>
-                                </Card>
-                            </Box>
-                        ))}
+                <CustomBox>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            display: 'flex', flexDirection: 'column', gap: '3rem'
+                        }}>
+                        <Typography
+                            sx={{
+                                fontFamily: 'Mulish',
+                                fontSize: '45px',
+                                fontWeight: '600',
+                                lineHeight: '53px',
+                                letterSpacing: '0em',
+                                textAlign: 'center',
+                                color: '#20BBD0',
 
-            </Slider>
-            <div style={buttonContainerStyle}>
-                <button
-                    className="slick-arrow slick-prev"
-                    onClick={() => sliderRef.current.slickPrev()}
-                >
-                    <img
-                        src={LeftArrow}
-                        alt="left"
+                            }}>
+                            Our Courses
+                        </Typography>
+
+                        <Typography
+                            sx={{
+                                fontFamily: 'Mulish',
+                                fontWeight: '400',
+                                fontSize: '1.2rem',
+                                size: '20px',
+                                lineHeight: "27px",
+                                textAlign: 'center',
+                                alignItems: 'center',
+                            }}>
+                            "Experience the Magnetic Charm of Our Courses and Ignite Your Journey to a Bright Future!"
+                        </Typography>
+                    </Box>
+                    <div
                         style={{
-                            overflow: 'hidden',
-                            width: '3vw',
-                            marginTop: '3rem',
-                            marginLeft: '-1rem',
+                            marginTop: '1rem',
+                            position: 'relative',
+                            width: '100%',
+                            background: 'transparent',
+                            border: '1px solid transparent',
                         }}
-                    />
-                </button>
-                <button
-                    className="slick-arrow slick-next"
-                    onClick={() => sliderRef.current.slickNext()}
-                >
-                    <img
-                        src={RightArrow}
-                        alt="right"
-                        style={{ overflow: 'hidden', width: '3vw', marginTop: '3rem' }}
-                    />
-                </button>
-            </div>
-        </div>
-            </CustomBox>
-            )}
+                    >
+                        <Slider ref={sliderRef} {...settings}>
+                            {courseData.map((data, index) => (
+                                <Box key={index} sx={{ width: '100%', maxWidth: '255px', marginBottom: '8px' }}>
+                                    <Card sx={{ borderRadius: '20px' }}>
+                                        <CardMedia
+                                            sx={{
+                                                height: 140,
+                                                width: '100%',
+                                                borderRadius: '12px',
+                                                backgroundColor: 'aqua',
+                                            }}
+                                            image={`https://media.theoogway.com/${data.logo}`}
+                                            title="green iguana"
+                                        />
+                                        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                            <Typography
+                                                gutterBottom
+                                                variant="h5"
+                                                component="div"
+                                                sx={{
+                                                    fontSize: '19.5px',
+                                                    lineHeight: '23.6px',
+                                                    fontFamily: 'Inter',
+                                                    textAlign: 'center',
+                                                }}
+                                            >
+                                                {data.title}
+                                            </Typography>
+                                            <Button
+                                                sx={{
+                                                    color: '#8C8C8C',
+                                                    border: '1px solid',
+                                                    fontSize: '10.5px',
+                                                    lineHeight: '10.6px',
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    marginTop: '10px',
+                                                }}
+                                            >
+                                                Learn more
+                                            </Button>
+                                        </CardContent>
+                                    </Card>
+                                </Box>
+                            ))}
+
+                        </Slider>
+                        <div style={buttonContainerStyle}>
+                            <button
+                                className="slick-arrow slick-prev"
+                                onClick={() => sliderRef.current.slickPrev()}
+                            >
+                                <img
+                                    src={LeftArrow}
+                                    alt="left"
+                                    style={{
+                                        overflow: 'hidden',
+                                        width: '3vw',
+                                        marginTop: '3rem',
+                                        marginLeft: '-1rem',
+                                    }}
+                                />
+                            </button>
+                            <button
+                                className="slick-arrow slick-next"
+                                onClick={() => sliderRef.current.slickNext()}
+                            >
+                                <img
+                                    src={RightArrow}
+                                    alt="right"
+                                    style={{ overflow: 'hidden', width: '3vw', marginTop: '3rem' }}
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </CustomBox>
+            )
+            }
         </CustomContainer >
     )
 }

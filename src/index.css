@@ -16,3 +16,7 @@ code {
   position: absolute;
   left: 88px;  
 }
+
+.stop-scrolling {
+  overflow: hidden;
+}
